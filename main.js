@@ -23,10 +23,17 @@ function addTask(state, item) {
   state.items.push(taskObj);
 }
 
-function removeTask(state, item) {
-  var index = state.items.indexOf(item);
+function removeTask(state, task) {
+  var index = state.items.indexOf(task);
   if (index > -1) {
     state.items.splice(index, 1);
+  }
+}
+
+function completeTask(state, task) {
+  var index = arrayObjectIndexOf(state.items, task, 'name');
+  if (index > -1) {
+    state.items[index].complete = true;
   }
 }
 
@@ -39,4 +46,13 @@ function renderTasks(state, element) {
     }
   });
   element.html(tasksHTML);
+}
+
+function arrayObjectIndexOf(array, searchTerm, property) {
+  for (var i = 0; i < array.length; i++) {
+    if (array[i][property] == searchTerm) {
+      return i;
+    }
+  }
+  return -1;
 }
