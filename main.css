@@ -1,3 +1,19 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .complete {
   color: grey;
+}
+
+input[type=text] {
+  display: block;
+  width: 90%;
+  margin: 20px auto;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.tasks {
+  list-style: none;
 }
