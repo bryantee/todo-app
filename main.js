@@ -17,6 +17,13 @@ function addTask(state, item) {
   state.items.push(item);
 }
 
+function removeTask(state, item) {
+  var index = state.items.indexOf(item);
+  if (index > -1) {
+    state.items.splice(index, 1);
+  }
+}
+
 function renderTasks(state, element) {
   var tasksHTML = state.items.map(function(item) {
     return '<li>' + item + '</li>';
