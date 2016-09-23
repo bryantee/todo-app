@@ -24,7 +24,7 @@ function addTask(state, item) {
 }
 
 function removeTask(state, task) {
-  var index = state.items.indexOf(task);
+  var index = arrayObjectIndexOf(state.items, task, 'name');
   if (index > -1) {
     state.items.splice(index, 1);
   }
