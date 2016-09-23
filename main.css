@@ -5,6 +5,8 @@ body {
 .top-area {
   background-color: #03A9F4;
   padding: 25px;
+  -webkit-box-shadow: 0 1px 15px;
+  box-shadow: 0 1px 15px;
 }
 
 input[type=text] {
@@ -12,7 +14,7 @@ input[type=text] {
   width: 90%;
   margin: 20px auto;
   padding: 7px;
-  border-radius: 5px;
+  font-size: 1.4em;
 }
 
 ul {
@@ -22,7 +24,8 @@ ul {
 }
 
 li {
-  padding: 25px 20px 5px 20px;
+  padding: 25px 20px 5px 40px;
+  font-size: 1.25em;
 }
 
 li::first-letter {
