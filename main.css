@@ -2,6 +2,13 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+@media (min-width: 600px) {
+  .content-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
 .top-area {
   background-color: #03A9F4;
   padding: 25px;
