@@ -1,12 +1,23 @@
 $(document).ready(function() {
+
+  var taskListEl = $('.tasks');
+
   $('.todo-list').submit(function(event) {
     event.preventDefault();
     var todoAddEl = $('.todo-add');
-    var taskListEl = $('.tasks');
     addTask(state, todoAddEl.val());
     renderTasks(state, taskListEl);
     todoAddEl.val('');
   });
+
+  // event listener to mark task as complete
+  $('ul').on('click', 'li', function(event) {
+    event.stopPropagation();
+    var task = $(this).text();
+    completeTask(state, task);
+    renderTasks(state, taskListEl);
+  })
+
 });
 
 var state = {
