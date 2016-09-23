@@ -14,7 +14,13 @@ $(document).ready(function() {
   $('ul').on('click', 'li', function(event) {
     event.stopPropagation();
     var task = $(this).text();
-    completeTask(state, task);
+    var index = arrayObjectIndexOf(state.items, task, 'name');
+    taskObj = state.items[index];
+    if (!taskObj.complete) {
+      completeTask(state, task);
+    } else if (taskObj.complete) {
+      removeTask(state, task);
+    }
     renderTasks(state, taskListEl);
   })
 
