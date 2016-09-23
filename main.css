@@ -31,4 +31,5 @@ li::first-letter {
 
 .complete {
   color: grey;
+  text-decoration: line-through;
 }
