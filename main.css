@@ -2,8 +2,9 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.complete {
-  color: grey;
+.top-area {
+  background-color: #03A9F4;
+  padding: 25px;
 }
 
 input[type=text] {
@@ -14,6 +15,20 @@ input[type=text] {
   border-radius: 5px;
 }
 
-.tasks {
+ul {
+  padding-left: 0;
+  margin: 0;
   list-style: none;
+}
+
+li {
+  padding: 25px 20px 5px 20px;
+}
+
+li::first-letter {
+  text-transform: capitalize;
+}
+
+.complete {
+  color: grey;
 }
