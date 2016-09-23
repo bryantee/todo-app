@@ -13,8 +13,14 @@ var state = {
   items: []
 };
 
+function task(taskName) {
+  this.name = taskName;
+  this.complete = false;
+}
+
 function addTask(state, item) {
-  state.items.push(item);
+  var taskObj = new task(item);
+  state.items.push(taskObj);
 }
 
 function removeTask(state, item) {
@@ -26,7 +32,11 @@ function removeTask(state, item) {
 
 function renderTasks(state, element) {
   var tasksHTML = state.items.map(function(item) {
-    return '<li>' + item + '</li>';
+    if (!item.complete) {
+      return '<li>' + item.name + '</li>';
+    } else if (item.complete) {
+      return '<li class="complete">' + item.name + '</li>';
+    }
   });
   element.html(tasksHTML);
 }
